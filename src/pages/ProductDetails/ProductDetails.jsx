@@ -1,9 +1,14 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useContext } from "react"
+import { GoBackButtonContext } from "./../../Context/Context";
+
 import './ProductDetails.scss'
 
 const ProductDetails = () => {
   // hier ist die ID
   const { id } = useParams();
+  const GoBackValue = useContext(GoBackButtonContext);
+  const navigate = useNavigate();
 
   // Fetch-Anfrage an die CocktailDB-API
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
@@ -24,14 +29,16 @@ const ProductDetails = () => {
       console.error('Fetch error:', error);
     });
 
+const goBackFunction = () => { // Funktion um zur richtigen URL zu navigieren
+  navigate(`${GoBackValue.goBackURL}`)
+}
+
   return (
     <article className='pr-details'>
       <div>
         <h3>Drink</h3>
         <img src="https://source.unsplash.com/random" alt="" />
-        <Link to="/">
-          <button>Back</button> 
-        </Link>
+          <button onClick={() => goBackFunction()}>Back</button> 
       </div>
       <section>
         <p>Ingredients</p>

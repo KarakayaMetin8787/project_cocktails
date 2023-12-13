@@ -1,0 +1,13 @@
+.Productlistitem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 8px;
+    .Productcard_title {
+      font-size: 4vw;
+      color: white;
+    }
+    img {
+      width: 20%;
+    }
+  }

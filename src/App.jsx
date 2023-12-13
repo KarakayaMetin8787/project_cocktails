@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import Products from "./pages/Products/Products";
-import { SearchFetchContext } from "./Context/Context";
+import { SearchFetchContext, GoBackButtonContext } from "./Context/Context";
 import { useState } from "react";
 import ProductList from "./components/ProductList/ProductList";
 import ProductCategoryList from "./pages/ProductCategoryList/ProductCategoryList";
@@ -15,10 +15,12 @@ import ProductDetails from "./pages/ProductDetails/ProductDetails";
 function App() {
 
 const [searchName, setSearchName] = useState([]);
+const [goBackURL, setgoBackURL] = useState("");
 
   return (
 
     <BrowserRouter>
+      <GoBackButtonContext.Provider value={{ goBackURL, setgoBackURL }}>
       <SearchFetchContext.Provider value={{ searchName, setSearchName }}>
       <div className="">
         <Header />
@@ -32,6 +34,7 @@ const [searchName, setSearchName] = useState([]);
         <Footer />
       </div>
       </SearchFetchContext.Provider>
+      </GoBackButtonContext.Provider>
     </BrowserRouter>
   );
 }

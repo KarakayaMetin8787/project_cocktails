@@ -8,13 +8,14 @@ const ProductList = () => {
 console.log(SearchNameValue)
   return (
   <>
-        <ul>
+        <ul className="list">
         {/* render component productitem and pass data */}
         {SearchNameValue.searchName ? (
           <div>
             {SearchNameValue?.searchName.drinks.map((drink) => (
               <ProductItem
                 key={drink.idDrink}
+                id={drink.idDrink}
                 name={drink.strDrink}
                 img={drink.strDrinkThumb}
               />
