@@ -3,7 +3,7 @@ import "./App.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
-import Products from "./pages/Products/Products";
+import ProductCategoryList from "./pages/ProductCategoryList/ProductCategoryList";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products/:category" element={<Products />} />
+          <Route path="/products/:category" element={<ProductCategoryList />} />
         </Routes>
       </BrowserRouter>
       <Footer />
