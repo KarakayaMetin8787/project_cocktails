@@ -6,14 +6,14 @@
   justify-content: space-between;
 
   margin-block: 5%;
-  box-shadow: 5px 1px green;
+  box-shadow: variables.$box-shadow-dark;
   padding: 1em;
   border-radius: 20px 2px 2px 2px;
   border: 1px solid variables.$heading-color;
 
   &:hover {
-    border: 1px solid whitesmoke;
-    box-shadow: 7px 1px whitesmoke;
+    // border: 1px solid whitesmoke;
+    box-shadow: variables.$box-shadow-hover-dark;
   }
 
   .titlebox {
@@ -32,7 +32,7 @@
     font-size: 4vw;
     color: variables.$text-color;
     font-family: variables.$text-font-family;
-    width: 20ch;
+    max-width: 20ch;
     padding-top: 1%;
     padding-left: 1%;
   }
@@ -69,7 +69,7 @@
 @media (min-width: 1200px) {
   .listitem {
     .card_title {
-      font-size: 16px;
+      font-size: 18px;
     }
   }
 }
