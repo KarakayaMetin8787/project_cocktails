@@ -4,11 +4,6 @@ import "./CategoryItem.scss";
 const CategoryItem = ({ category, id }) => {
   // Array zum Vergleich um durch iterration das richtige Produkt zu finden und auszugeben
   // Außerden werden Bilder zu den Kategorien hinzugefügt.
-  if (category === "Alkoholfrei") {
-    category = "Non_Alcoholic";
-  } else if (category === "Zufall") {
-    category = "Random";
-  }
 
   const categoryArr = [
     { name: "gin", image: "/public/gin.jpg" },
@@ -32,9 +27,14 @@ const CategoryItem = ({ category, id }) => {
   ];
 
   // finden der richtigen Kategorie. Gibt das Objekt nach eine Kategorievergleich aus
-  const categoryObj = categoryArr.find(
-    (cat) => cat.name === category.toLowerCase()
-  );
+  const categoryObj = categoryArr.find((cat) => {
+    if (category === "Alkoholfrei") {
+      return cat.name === "non_alcoholic";
+    } else if (category === "Zufall") {
+      return cat.name === "random";
+    }
+    return cat.name === category.toLowerCase();
+  });
 
   return (
     <Link to={`/products/${categoryObj.name}`}>

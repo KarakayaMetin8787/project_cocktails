@@ -4,13 +4,13 @@
 }
 
 @media (min-width: 576px) {
-  .section-category {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .section-category {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 // Large devices (desktops, 992px and up)

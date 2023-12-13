@@ -73,6 +73,9 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .category-item-overlay {
+    border: none;
+  }
 }
 
 // Large devices (desktops, 992px and up)
@@ -87,6 +90,7 @@
 @media (min-width: 1400px) {
   .category-item {
     padding-block: 20rem 20rem;
+    gap: 4rem;
     // box-shadow: 1px 1px 10px #16a34a;
 
     .category-item:hover {
