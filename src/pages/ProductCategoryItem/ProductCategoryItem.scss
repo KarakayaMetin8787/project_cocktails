@@ -1,0 +1,13 @@
+.listitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 8px;
+  .card_title {
+    font-size: 2rem;
+    color: white;
+  }
+  img {
+    width: 20%;
+  }
+}
