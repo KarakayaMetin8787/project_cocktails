@@ -51,7 +51,7 @@ const CategoryItem = ({ category, id }) => {
       <article className="category-item">
         <div className="category-item-overlay"> </div>
         <img className="category-item-img" src={categoryObj.image} alt="" />
-        <span className="category-item-accent">{id}</span>
+        <span className="category-item-accent-number">{id}</span>
         <h2 className="category-item-headline">{category}</h2>
         <p className="category-item-content">Ipsum dolor sit amet</p>
       </article>
