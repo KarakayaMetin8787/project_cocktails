@@ -3,8 +3,10 @@ import "./App.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
-import Products from "./pages/Products/Products";
+import ProductCategoryList from "./pages/ProductCategoryList/ProductCategoryList";
 import CreateProduct from "./pages/CreateProduct/CreateProduct";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
+
 
 function App() {
   return (
@@ -13,8 +15,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products/:category" element={<Products />} />
           <Route path="/createProduct" element={<CreateProduct />} />
+          <Route path="/products/:category" element={<ProductCategoryList />} />
+          <Route path="/products/product-details/"element={<ProductDetails />} />
         </Routes>
         <Footer />
       </div>
