@@ -15,4 +15,3 @@ const ProductCategoryItem = ({ name, img, id }) => {
 };
 
 export default ProductCategoryItem;
-// `/products/${id}`
