@@ -12,8 +12,8 @@
   border: 1px solid variables.$heading-color;
 
   &:hover {
-    border: 1px solid white;
-    box-shadow: 7px 1px white;
+    border: 1px solid whitesmoke;
+    box-shadow: 7px 1px whitesmoke;
   }
 
   .titlebox {
@@ -29,7 +29,7 @@
   }
 
   .card_title {
-    // font-size: 4vw;
+    font-size: 4vw;
     color: variables.$text-color;
     font-family: variables.$text-font-family;
     width: 20ch;
@@ -52,11 +52,9 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .listitem {
+    margin-block: 0;
     .card_title {
-      font-size: 18px;
-    }
-    .listitem {
-      margin-block: 10px;
+      font-size: 12px;
     }
     .titlebox {
       img {
@@ -69,6 +67,11 @@
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  .listitem {
+    .card_title {
+      font-size: 16px;
+    }
+  }
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
