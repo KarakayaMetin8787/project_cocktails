@@ -3,13 +3,15 @@ import "./Nav.scss";
 
 const Nav = () => {
   return (
-    <>
-      <Link to="/">Drinks&Chill</Link>
+    <article className="navigation container">
+      <Link to="/" className="logo">
+        Drinks&Chill
+      </Link>
       <nav className="nav-bar">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/createProduct">Create Product</NavLink>
       </nav>
-    </>
+    </article>
   );
 };
 
