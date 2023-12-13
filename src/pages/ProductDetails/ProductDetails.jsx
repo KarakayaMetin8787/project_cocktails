@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import './ProductDetails.scss'
 
 const ProductDetails = () => {
-
+  // hier ist die ID
   const { id } = useParams();
 
   // Fetch-Anfrage an die CocktailDB-API
@@ -12,7 +12,6 @@ const ProductDetails = () => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-
       // Die Antwort in JSON konvertieren
       return response.json();
     })
