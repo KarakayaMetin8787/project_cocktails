@@ -4,6 +4,12 @@ import "./CategoryItem.scss";
 const CategoryItem = ({ category, id }) => {
   // Array zum Vergleich um durch iterration das richtige Produkt zu finden und auszugeben
   // Außerden werden Bilder zu den Kategorien hinzugefügt.
+  if (category === "Alkoholfrei") {
+    category = "Non_Alcoholic";
+  } else if (category === "Zufall") {
+    category = "Random";
+  }
+
   const categoryArr = [
     { name: "gin", image: "/public/gin.jpg" },
     {
@@ -16,11 +22,11 @@ const CategoryItem = ({ category, id }) => {
       image: "/public/scotch.jpg",
     },
     {
-      name: "alkoholfrei",
+      name: "non_alcoholic",
       image: "/public/alcohol-free.jpg",
     },
     {
-      name: "zufall",
+      name: "random",
       image: "/public/random-coctails.jpg",
     },
   ];
@@ -31,7 +37,7 @@ const CategoryItem = ({ category, id }) => {
   );
 
   return (
-    <Link to={`/products/${category.toLowerCase()}`}>
+    <Link to={`/products/${categoryObj.name}`}>
       <article className="category-item">
         <div className="category-item-overlay"> </div>
         <img className="category-item-img" src={categoryObj.image} alt="" />
