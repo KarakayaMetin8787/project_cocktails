@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 const Hero = () => {
-    
     const [searchInput, setSearchInput] = useState("");
     const [fetchData, setFetchData] = useState([]);
     

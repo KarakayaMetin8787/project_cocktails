@@ -1,12 +1,11 @@
+import CategoryList from "../../components/CategoryList/CategoryList";
 
 const Home = () => {
+  return (
+    <main className="main-home container">
+      <CategoryList />
+    </main>
+  );
+};
 
-
-
-    return ( 
-        <>
-        </>
-     );
-}
- 
 export default Home;

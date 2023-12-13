@@ -1,0 +1,30 @@
+.section-category {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .section-category {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  .section-category {
+    gap: 4rem;
+    margin-block: 4rem;
+  }
+}
