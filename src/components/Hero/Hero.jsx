@@ -1,9 +1,11 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useContext, useState } from "react";
+import { SearchFetchContext } from "../../Context/Context";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
     const [searchInput, setSearchInput] = useState("");
-    const [fetchData, setFetchData] = useState([]);
+    const SearchNameValue = useContext(SearchFetchContext);
+    const navigate = useNavigate();
     
     function handleSubmit(event) {
         event.preventDefault()
@@ -12,9 +14,9 @@ const Hero = () => {
         const SearchButton = () => {
             fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`)
                 .then (response => response.json())
-                .then (data => {
-                    console.log(data)
-                    setFetchData(data)
+                .then(data => {
+                    SearchNameValue.setSearchName(data);
+                    navigate("/productlist");
                 })
                 .catch (error => console.error(error));
         }
