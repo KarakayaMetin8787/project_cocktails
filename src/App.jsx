@@ -3,22 +3,25 @@ import "./App.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
-import Products from "./pages/Products/Products";
+import ProductCategoryList from "./pages/ProductCategoryList/ProductCategoryList";
+import CreateProduct from "./pages/CreateProduct/CreateProduct";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
+
 
 function App() {
   return (
-    <div>
-      <Header />
-      <BrowserRouter>
+    <BrowserRouter>
+      <div className="">
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products/:category" element={<Products />} />
           <Route path="/products/product-details/:id"element={<ProductDetails />} />
+          <Route path="/createProduct" element={<CreateProduct />} />
+          <Route path="/products/:category" element={<ProductCategoryList />} />
         </Routes>
-      </BrowserRouter>
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
