@@ -1,2 +1,52 @@
-.navigation {
+@use "../../scssStyles/variables";
+
+.section-create-product {
+  padding-inline: 5%;
+}
+
+.create-product-headline {
+  color: variables.$text-color;
+}
+
+.create-product-content {
+}
+
+.create-product-form {
+  display: flex;
+  flex-direction: column;
+  margin-block: 4rem;
+}
+
+.create-product-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 14rem;
+  margin-block: 8rem;
+}
+
+.create-product-img {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.create-product-img:nth-of-type(1) {
+  top: 0;
+  left: 0;
+}
+
+.create-product-img:nth-of-type(2) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.create-product-img:nth-last-of-type(3) {
+  top: 100%;
+  left: 100%;
+  transform: translate(-100%, -100%);
+  z-index: 1;
 }
