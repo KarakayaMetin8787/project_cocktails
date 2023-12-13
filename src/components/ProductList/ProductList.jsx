@@ -1,8 +1,5 @@
 const Productlist = () => {
-    return ( 
-        <>
-        </>
-     );
-}
- 
+  return <></>;
+};
+
 export default Productlist;
