@@ -5,10 +5,10 @@ const Header = () => {
   const SearchButton = () => {};
 
   return (
-    <>
+    <header>
       <Nav />
       <Hero />
-    </>
+    </header>
   );
 };
 
