@@ -6,23 +6,27 @@ const CategoryItem = ({ category, id }) => {
   // Außerden werden Bilder zu den Kategorien hinzugefügt.
 
   const categoryArr = [
-    { name: "gin", image: "/public/gin.jpg" },
+    { name: "gin", image: "/public/gin.jpg", urlParamKey: "filter.php?i=" },
     {
       name: "vodka",
       image: "/public/vodka.jpg",
+      urlParamKey: "filter.php?i=",
     },
-    { name: "rum", image: "/public/rum.jpg" },
+    { name: "rum", image: "/public/rum.jpg", urlParamKey: "filter.php?i=" },
     {
       name: "scotch",
       image: "/public/scotch.jpg",
+      urlParamKey: "filter.php?i=",
     },
     {
       name: "non_alcoholic",
       image: "/public/alcohol-free.jpg",
+      urlParamKey: "filter.php?a=",
     },
     {
       name: "random",
       image: "/public/random-coctails.jpg",
+      urlParamKey: "random.php",
     },
   ];
 
@@ -37,7 +41,13 @@ const CategoryItem = ({ category, id }) => {
   });
 
   return (
-    <Link to={`/products/${categoryObj.name}`}>
+    <Link
+      to={
+        category === "Zufall"
+          ? `/products/${categoryObj.urlParamKey}`
+          : `/products/${categoryObj.urlParamKey}${categoryObj.name}`
+      }
+    >
       <article className="category-item">
         <div className="category-item-overlay"> </div>
         <img className="category-item-img" src={categoryObj.image} alt="" />
