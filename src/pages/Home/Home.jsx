@@ -1,5 +1,4 @@
 import CategoryList from "../../components/CategoryList/CategoryList";
-import { useEffect, useState } from "react";
 
 const Home = () => {
   return (
