@@ -90,11 +90,11 @@
 @media (min-width: 1400px) {
   .category-item {
     padding-block: 20rem 20rem;
-    gap: 4rem;
-    // box-shadow: 1px 1px 10px #16a34a;
 
-    .category-item:hover {
-      // transform: translateY(5px);
+    box-shadow: 5px 5px 10px rgba(22, 162, 73, 0.5);
+
+    &:hover {
+      box-shadow: 2px 2px 10px rgba(22, 162, 73, 0.5);
     }
 
     &-overlay {
