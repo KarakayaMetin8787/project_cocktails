@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
-import { SearchFetchContext } from "../../Context/Context";
+import { SearchFetchContext, GoBackButtonContext } from "./../../Context/Context"
 import { useNavigate } from "react-router-dom";
+import "./Hero.scss"
 
 const Hero = () => {
     const [searchInput, setSearchInput] = useState("");
     const SearchNameValue = useContext(SearchFetchContext);
+    const GoBackValue = useContext(GoBackButtonContext);
     const navigate = useNavigate();
     
     function handleSubmit(event) {
@@ -16,6 +18,7 @@ const Hero = () => {
                 .then (response => response.json())
                 .then(data => {
                     SearchNameValue.setSearchName(data);
+                    GoBackValue.setgoBackURL("/productlist")
                     navigate("/productlist");
                 })
                 .catch (error => console.error(error));
@@ -23,9 +26,9 @@ const Hero = () => {
     
     return ( 
         <>
-        <form onSubmit={handleSubmit}>
-            <input type="text" onChange={(event) => setSearchInput(event.target.value)}/>
-            <input type="submit" value="Search" onClick={() => SearchButton()}/>
+        <form className="SearchForm section-hero container" onSubmit={handleSubmit}>
+            <input className="InputField" placeholder="Search for..." type="text" onChange={(event) => setSearchInput(event.target.value)}/>
+            <input className="StartSearchButton" type="submit" value="Search" onClick={() => SearchButton()}/>
         </form>
         </>
     );
