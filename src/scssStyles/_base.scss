@@ -1,3 +1,5 @@
+@use "./variables";
+
 /*
 --- 01 TYPOGRAPHY SYSTEM
 
@@ -25,7 +27,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   font-family: "Roboto-Regular", sans-serif;
-  background-color: rgb(0, 0, 0);
+  background-color: variables.$primary-color-dark;
 }
 
 a {

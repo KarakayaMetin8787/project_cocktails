@@ -1,10 +1,8 @@
-$btn-bg-color-dark: red;
-$btn-bg-color-dark-hover: red;
-$btn-bg-color-dark-active: red;
+$primary-color-dark: rgb(3, 3, 3);
+$secundary-color-dark: rgb(23, 163, 74);
+$heading-color: rgb(23, 163, 74);
+$text-color: #fff;
+$box-shadow-dark: 5px 5px 10px rgba(22, 162, 73, 0.5);
+$box-shadow-hover-dark: 2px 2px 10px rgba(22, 162, 73, 0.5);
 
-$btn-bg-color-light: red;
-
-$btn-border: 2px solid red;
-
-$btn-box-shadow-hover: 4px 4px 5px red;
-$btn-box-shadow-active: 2px 2px 2px red;
+$text-font-family: "Roboto-Regular", sans-serif;

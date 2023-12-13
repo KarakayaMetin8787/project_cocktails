@@ -1,5 +1,7 @@
+@use "../../scssStyles/variables";
+
 .footer {
-  background-color: #16a34a;
+  background-color: variables.$secundary-color-dark;
   padding-block: 9.6rem;
   padding-inline: 5%;
   position: relative;
@@ -7,7 +9,7 @@
   transition: all 0.5s ease-out;
 
   &-slider-wrapper {
-    background-color: #000;
+    background-color: variables.$primary-color-dark;
     height: 60px;
     position: absolute;
     top: 0;
@@ -29,7 +31,7 @@
     transition: all 0.5s ease-out;
 
     .slider-logo {
-      color: #16a34a;
+      color: variables.$secundary-color-dark;
       display: inline-block;
       margin-inline: 1rem;
     }
