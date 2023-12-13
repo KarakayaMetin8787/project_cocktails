@@ -1,10 +1,13 @@
-import { Link, useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import './ProductDetails.scss';
+import { useParams, useNavigate } from 'react-router-dom';
+import { GoBackButtonContext } from "./../../Context/Context";
+import { useState, useEffect, useContext } from 'react';
+import './ProductDetails.scss'
 
 const ProductDetails = () => {
   // Hier ist die ID
   const { id } = useParams();
+  const GoBackValue = useContext(GoBackButtonContext);
+  const navigate = useNavigate();
   const [drinkData, setDrinkData] = useState(null);
 
   useEffect(() => {
@@ -29,15 +32,17 @@ const ProductDetails = () => {
       });
   }, [id]);
 
+const goBackFunction = () => { // Funktion um zur richtigen URL zu navigieren
+  navigate(`${GoBackValue.goBackURL}`)
+}
+
   return (
     <article className='pr-details'>
       {drinkData ? (
         <div>
           <h3>{drinkData.strDrink}</h3>
           <img src={drinkData.strDrinkThumb} alt={drinkData.strDrink} />
-          <Link to="/">
-            <button>Back</button> 
-          </Link>
+          <button onClick={() => goBackFunction()}>Back</button> 
         </div>
       ) : (
         <p>Loading...</p>

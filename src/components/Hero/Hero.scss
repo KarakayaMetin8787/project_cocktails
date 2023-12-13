@@ -1,3 +1,26 @@
-.section-hero {
-  padding-inline: 5%;
+.SearchForm {
+    grid-column: 2/3;
+    display: flex;
+    gap: 16px;
+    height: max-content;
+    .InputField {
+        font-family: "PlayfairDisplay-Bold", sans-serif;
+        font-size: 1.75rem;
+        padding: 8px;
+        flex-grow: 2;
+        background-color: black;
+        color: rgb(23, 163, 74);
+        border-radius: 8px;
+        outline: none;
+        max-width: 400px;
+    }
+    .StartSearchButton {
+        font-size: 1.75rem;
+        padding: 8px;
+        flex-grow: 1;
+        background-color: black;
+        color: white;
+        border-radius: 8px;
+        max-width: 150px;
+    }
 }
