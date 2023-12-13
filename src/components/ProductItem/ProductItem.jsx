@@ -1,8 +1,5 @@
 const ProductItem = () => {
-    return ( 
-        <>
-        </>
-     );
-}
- 
+  return <></>;
+};
+
 export default ProductItem;
