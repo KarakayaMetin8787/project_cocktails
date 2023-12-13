@@ -4,6 +4,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import ProductCategoryList from "./pages/ProductCategoryList/ProductCategoryList";
+import Products from "./pages/Products/Products";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products/:category" element={<ProductCategoryList />} />
+          <Route path="/products/product-details/"element={<ProductDetails />} />
         </Routes>
       </BrowserRouter>
       <Footer />
