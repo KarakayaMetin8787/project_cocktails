@@ -6,26 +6,26 @@ const CategoryItem = ({ category, id }) => {
   // Außerden werden Bilder zu den Kategorien hinzugefügt.
 
   const categoryArr = [
-    { name: "gin", image: "/public/gin.jpg", urlParamKey: "filter.php?i=" },
+    { name: "gin", image: "/gin.jpg", urlParamKey: "filter.php?i=" },
     {
       name: "vodka",
-      image: "/public/vodka.jpg",
+      image: "/vodka.jpg",
       urlParamKey: "filter.php?i=",
     },
-    { name: "rum", image: "/public/rum.jpg", urlParamKey: "filter.php?i=" },
+    { name: "rum", image: "/rum.jpg", urlParamKey: "filter.php?i=" },
     {
       name: "scotch",
-      image: "/public/scotch.jpg",
+      image: "/scotch.jpg",
       urlParamKey: "filter.php?i=",
     },
     {
       name: "non_alcoholic",
-      image: "/public/alcohol-free.jpg",
+      image: "/alcohol-free.jpg",
       urlParamKey: "filter.php?a=",
     },
     {
       name: "random",
-      image: "/public/random-coctails.jpg",
+      image: "/random-coctails.jpg",
       urlParamKey: "random.php",
     },
   ];

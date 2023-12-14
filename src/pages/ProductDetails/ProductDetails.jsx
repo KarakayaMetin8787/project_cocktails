@@ -1,7 +1,7 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from "react-router-dom";
 import { GoBackButtonContext } from "./../../Context/Context";
-import { useState, useEffect, useContext } from 'react';
-import './ProductDetails.scss'
+import { useState, useEffect, useContext } from "react";
+import "./ProductDetails.scss";
 
 const ProductDetails = () => {
   // Hier ist die ID
@@ -13,7 +13,7 @@ const ProductDetails = () => {
   useEffect(() => {
     // Fetch-Anfrage an die CocktailDB-API
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
-      .then(response => {
+      .then((response) => {
         // Überprüfen, ob die Anfrage erfolgreich war (Statuscode 200)
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -21,28 +21,29 @@ const ProductDetails = () => {
         // Die Antwort in JSON konvertieren
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         // Hier kannst du mit den Daten arbeiten, die du von der API erhalten hast
         setDrinkData(data.drinks[0]); // Annahme: Die API gibt ein Array mit Drinks zurück
         console.log(data);
       })
-      .catch(error => {
+      .catch((error) => {
         // Hier kannst du Fehler handhaben, falls die Anfrage fehlschlägt
-        console.error('Fetch error:', error);
+        console.error("Fetch error:", error);
       });
   }, [id]);
 
-const goBackFunction = () => { // Funktion um zur richtigen URL zu navigieren
-  navigate(`${GoBackValue.goBackURL}`)
-}
+  const goBackFunction = () => {
+    // Funktion um zur richtigen URL zu navigieren
+    navigate(`${GoBackValue.goBackURL}`);
+  };
 
   return (
-    <article className='pr-details'>
+    <article className="pr-details">
       {drinkData ? (
         <div>
           <h3>{drinkData.strDrink}</h3>
           <img src={drinkData.strDrinkThumb} alt={drinkData.strDrink} />
-          <button onClick={() => goBackFunction()}>Back</button> 
+          <button onClick={() => goBackFunction()}>Back</button>
         </div>
       ) : (
         <p>Loading...</p>
@@ -66,6 +67,6 @@ const goBackFunction = () => { // Funktion um zur richtigen URL zu navigieren
       </section>
     </article>
   );
-}
+};
 
 export default ProductDetails;

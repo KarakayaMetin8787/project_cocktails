@@ -3,6 +3,7 @@ import "./CategoryList.scss";
 
 const CategoryList = () => {
   // Array der Kategorien erstellt um mit einem loop die Kategorien auszugeben
+
   const categories = ["Gin", "Vodka", "Rum", "Scotch", "Alkoholfrei", "Zufall"];
 
   return (

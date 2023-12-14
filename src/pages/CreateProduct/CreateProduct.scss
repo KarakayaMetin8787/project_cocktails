@@ -2,51 +2,177 @@
 
 .section-create-product {
   padding-inline: 5%;
+
+  .create-product-headline {
+    color: variables.$text-color;
+    margin-top: 4rem;
+  }
+
+  .create-product-content {
+    .create-product-form {
+      display: flex;
+      flex-direction: column;
+      margin-block: 4rem;
+      row-gap: 2rem;
+    }
+
+    .create-product-form input:not(:last-child) {
+      background-color: transparent;
+      color: variables.$text-color;
+      border: 1px solid variables.$secundary-color-dark;
+      padding: 0.8rem 1.4rem;
+      border-radius: 0.8rem;
+      font-size: 1.8rem;
+    }
+
+    .create-product-form input:focus {
+      outline: none;
+    }
+
+    .create-product-form textarea {
+      background-color: transparent;
+      padding: 0.8rem 1.4rem;
+      border-radius: 0.8rem;
+      font-size: 1.8rem;
+      max-height: 12rem;
+      border: 1px solid variables.$text-color;
+      color: variables.$text-color;
+    }
+
+    .create-product-btn {
+      padding: 0.8rem 1.4rem;
+      border-radius: 0.8rem;
+      font-size: 1.8rem;
+      background-color: variables.$heading-color;
+      border: none;
+      color: variables.$text-color;
+    }
+  }
+
+  .create-product-img-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 14rem;
+    margin-block: 8rem;
+
+    .create-product-img {
+      width: 50%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .create-product-img:nth-of-type(1) {
+      top: 0;
+      left: 0;
+    }
+
+    .create-product-img:nth-of-type(2) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .create-product-img:nth-last-of-type(3) {
+      top: 100%;
+      left: 100%;
+      transform: translate(-100%, -100%);
+      z-index: 1;
+    }
+  }
 }
 
-.create-product-headline {
-  color: variables.$text-color;
+@media (min-width: 576px) {
+  .section-create-product .create-product-img-wrapper {
+    margin-block: 20rem;
+  }
 }
 
-.create-product-content {
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .section-category {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .section-create-product .create-product-img-wrapper {
+    margin-block: 30rem;
+  }
 }
 
-.create-product-form {
-  display: flex;
-  flex-direction: column;
-  margin-block: 4rem;
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .create-product-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .create-product-img-wrapper {
+    .create-product-img {
+      margin-top: -20rem;
+      margin-left: 4rem;
+    }
+
+    .create-product-img:nth-of-type(1) {
+    }
+
+    .create-product-img:nth-of-type(2) {
+      margin-top: -10rem;
+      margin-left: 8rem;
+    }
+
+    .create-product-img:nth-last-of-type(3) {
+      margin-top: 4rem;
+    }
+  }
 }
 
-.create-product-img-wrapper {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  padding: 14rem;
-  margin-block: 8rem;
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .create-product-img-wrapper {
+    .create-product-img {
+      margin-top: -25rem;
+      margin-left: 4rem;
+    }
+
+    .create-product-img:nth-of-type(1) {
+    }
+
+    .create-product-img:nth-of-type(2) {
+      margin-top: -10rem;
+      margin-left: 8rem;
+    }
+
+    .create-product-img:nth-last-of-type(3) {
+      margin-top: 6rem;
+    }
+  }
 }
 
-.create-product-img {
-  width: 50%;
-  height: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  .section-category {
+    gap: 4rem;
+    margin-block: 4rem;
+  }
 
-.create-product-img:nth-of-type(1) {
-  top: 0;
-  left: 0;
-}
+  .create-product-img-wrapper {
+    .create-product-img {
+      margin-top: -30rem;
+      margin-left: 4rem;
+    }
 
-.create-product-img:nth-of-type(2) {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+    .create-product-img:nth-of-type(1) {
+    }
 
-.create-product-img:nth-last-of-type(3) {
-  top: 100%;
-  left: 100%;
-  transform: translate(-100%, -100%);
-  z-index: 1;
+    .create-product-img:nth-of-type(2) {
+      margin-top: -10rem;
+      margin-left: 8rem;
+    }
+
+    .create-product-img:nth-last-of-type(3) {
+      margin-top: 12rem;
+    }
+  }
 }
