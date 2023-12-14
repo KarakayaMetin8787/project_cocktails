@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom";
-import "./ProductItem.scss"
+import "./ProductItem.scss";
+import moreBTN from "./../../../public/moreBTN.png";
 
 const ProductItem = ({ name, img, id }) => {
   return (
     <>
-      <Link to={`/products/product-details/${id}`}>
-        <li className="Productlistitem">
-          <p className="Productcard_title">{name}</p>
-          <img src={img} alt="drink-img" />
-        </li>
-      </Link>
+      <div className="gridbox">
+        <Link to={`/products/product-details/${id}`}>
+          <li className="listitem">
+            <div className="titlebox">
+              <p className="card_title">{name}</p>
+              <img src={moreBTN} alt="" />
+            </div>
+            <img src={img} alt="drink-img" />
+          </li>
+        </Link>
+      </div>
     </>
   );
 };

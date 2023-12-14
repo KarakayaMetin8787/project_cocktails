@@ -1,18 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./CategoryItem.scss";
+import { useContext } from "react";
+import { GoBackButtonContext } from "./../../Context/Context"
+import { useEffect } from "react";
 
 const CategoryItem = ({ category, id }) => {
   // Array zum Vergleich um durch iterration das richtige Produkt zu finden und auszugeben
   // Außerden werden Bilder zu den Kategorien hinzugefügt.
-
+  
   const categoryArr = [
+
     { name: "gin", image: "/gin.jpg", urlParamKey: "filter.php?i=" },
+
     {
       name: "vodka",
       image: "/vodka.jpg",
       urlParamKey: "filter.php?i=",
     },
+
     { name: "rum", image: "/rum.jpg", urlParamKey: "filter.php?i=" },
+
     {
       name: "scotch",
       image: "/scotch.jpg",
@@ -29,7 +36,7 @@ const CategoryItem = ({ category, id }) => {
       urlParamKey: "random.php",
     },
   ];
-
+  
   // finden der richtigen Kategorie. Gibt das Objekt nach eine Kategorievergleich aus
   const categoryObj = categoryArr.find((cat) => {
     if (category === "Alkoholfrei") {
@@ -39,15 +46,24 @@ const CategoryItem = ({ category, id }) => {
     }
     return cat.name === category.toLowerCase();
   });
+  
+    const GoBackValue = useContext(GoBackButtonContext);
+    const navigate = useNavigate();
+    
+    const testFunktion = () => {
+      if (category === "Zufall") {
+        GoBackValue.setgoBackURL(`/products/${categoryObj.urlParamKey}`);
+        navigate(`/products/${categoryObj.urlParamKey}`);
+      } else {
+        GoBackValue.setgoBackURL(`/products/${categoryObj.urlParamKey}${categoryObj.name}`);
+        navigate(`/products/${categoryObj.urlParamKey}${categoryObj.name}`);
+      }
+     }
 
   return (
-    <Link
-      to={
-        category === "Zufall"
-          ? `/products/${categoryObj.urlParamKey}`
-          : `/products/${categoryObj.urlParamKey}${categoryObj.name}`
-      }
-    >
+
+
+    <div onClick={testFunktion}>
       <article className="category-item">
         <div className="category-item-overlay"> </div>
         <img className="category-item-img" src={categoryObj.image} alt="" />
@@ -55,7 +71,9 @@ const CategoryItem = ({ category, id }) => {
         <h2 className="category-item-headline">{category}</h2>
         <p className="category-item-content">Ipsum dolor sit amet</p>
       </article>
-    </Link>
+    </div>
+
+
   );
 };
 

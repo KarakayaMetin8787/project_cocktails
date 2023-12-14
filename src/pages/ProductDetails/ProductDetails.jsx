@@ -43,7 +43,9 @@ const ProductDetails = () => {
         <div>
           <h3>{drinkData.strDrink}</h3>
           <img src={drinkData.strDrinkThumb} alt={drinkData.strDrink} />
-          <button onClick={() => goBackFunction()}>Back</button>
+
+          <button onClick={() => goBackFunction()}>&#8249;</button> 
+
         </div>
       ) : (
         <p>Loading...</p>

@@ -28,7 +28,6 @@ function App() {
     },
   ]);
 
-  console.log(createProduct);
 
   return (
     <BrowserRouter>
