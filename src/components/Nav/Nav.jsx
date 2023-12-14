@@ -3,7 +3,7 @@ import "./Nav.scss";
 
 const Nav = () => {
   return (
-    <article className="navigation container">
+    <article className="navigation">
       <Link to="/" className="logo">
         Drinks&Chill
       </Link>

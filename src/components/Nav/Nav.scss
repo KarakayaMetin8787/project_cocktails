@@ -1,9 +1,9 @@
 @use "../../scssStyles/variables";
 .navigation {
+  grid-column: 2/3;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 5%;
   padding-block: 2rem 4rem;
 
   & a {
