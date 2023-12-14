@@ -10,10 +10,10 @@ const ProductCategoryList = () => {
   const category = useLocation();
   // const { createProduct, setCreateProduct } = useContext(CreateProductContext);
 
-  const productsFromLocalstorage = localStorage.getItem("createdProducts");
+  // const productsFromLocalstorage = localStorage.getItem("createdProducts");
 
-  const products = JSON.parse(productsFromLocalstorage);
-  console.log("=====", products);
+  // const products = JSON.parse(productsFromLocalstorage);
+  // console.log("=====", products);
 
   //   save path for fetching at specific api endpoint
   let path = `${category.pathname}${category.search}`
@@ -29,14 +29,14 @@ const ProductCategoryList = () => {
       .catch((error) => console.log("Tell me why: ", error));
   }, []);
 
-  console.log(data);
-  const prod = products.filter((product) => {
-    // console.log(path.split("=").slice(-1).join());
-    const cat = path.split("=").slice(-1).join();
-    console.log(cat);
-    return product.category.toLowerCase() === cat;
-  });
-  console.log(prod);
+  // const prod = products.filter((product) => {
+  //   // console.log(path.split("=").slice(-1).join());
+  //   const cat = path.split("=").slice(-1).join();
+  //   console.log(cat);
+  //   return product.category.toLowerCase() === cat;
+  // });
+
+  // console.log(prod);
   return (
     <>
       <ul className="list">
@@ -51,14 +51,14 @@ const ProductCategoryList = () => {
                 img={drink.strDrinkThumb}
               />
             ))}
-            {prod.map((drink, index) => (
+            {/* {prod.map((drink, index) => (
               <ProductCategoryItem
                 key={index}
                 id={uuidv4()}
                 name={drink.name}
                 img={drink.imgURL}
               />
-            ))}
+            ))} */}
           </>
         ) : (
           <p>Drinks werden geladen....</p>
@@ -67,5 +67,4 @@ const ProductCategoryList = () => {
     </>
   );
 };
-
 export default ProductCategoryList;
