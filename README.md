@@ -28,6 +28,9 @@ This was a group project intended to learn and repeat the usage of APIs in REACT
 ## Authors
 
 [Wilhelm Lenz](https://github.com/wilhelm-lenz)
+
 [K. Wiefel ](https://github.com/KWiefel)
+
 [Suat Ucar](https://github.com/SuperCoderSuat)
+
 [Metin Karakaya](https://github.com/KarakayaMetin8787)
