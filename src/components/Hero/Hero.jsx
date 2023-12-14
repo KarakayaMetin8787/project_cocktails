@@ -26,7 +26,7 @@ const Hero = () => {
     
     return ( 
         <>
-        <form className="SearchForm section-hero container" onSubmit={handleSubmit}>
+        <form className="SearchForm section-hero" onSubmit={handleSubmit}>
             <input className="InputField" placeholder="Search for..." type="text" onChange={(event) => setSearchInput(event.target.value)}/>
             <input className="StartSearchButton" type="submit" value="Search" onClick={() => SearchButton()}/>
         </form>
