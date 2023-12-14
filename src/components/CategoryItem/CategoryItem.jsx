@@ -9,34 +9,30 @@ const CategoryItem = ({ category, id }) => {
   // Außerden werden Bilder zu den Kategorien hinzugefügt.
   
   const categoryArr = [
-    { 
-      name: "gin", 
-      image: "/public/gin.jpg", 
-      urlParamKey: "filter.php?i=" 
-    },
+
+    { name: "gin", image: "/gin.jpg", urlParamKey: "filter.php?i=" },
+
     {
       name: "vodka",
-      image: "/public/vodka.jpg",
+      image: "/vodka.jpg",
       urlParamKey: "filter.php?i=",
     },
-    { 
-      name: "rum", 
-      image: "/public/rum.jpg", 
-      urlParamKey: "filter.php?i=" 
-    },
+
+    { name: "rum", image: "/rum.jpg", urlParamKey: "filter.php?i=" },
+
     {
       name: "scotch",
-      image: "/public/scotch.jpg",
+      image: "/scotch.jpg",
       urlParamKey: "filter.php?i=",
     },
     {
       name: "non_alcoholic",
-      image: "/public/alcohol-free.jpg",
+      image: "/alcohol-free.jpg",
       urlParamKey: "filter.php?a=",
     },
     {
       name: "random",
-      image: "/public/random-coctails.jpg",
+      image: "/random-coctails.jpg",
       urlParamKey: "random.php",
     },
   ];
@@ -51,8 +47,6 @@ const CategoryItem = ({ category, id }) => {
     return cat.name === category.toLowerCase();
   });
   
-  // ====================== Metin BackButton ==========================
-  
     const GoBackValue = useContext(GoBackButtonContext);
     const navigate = useNavigate();
     
@@ -65,25 +59,9 @@ const CategoryItem = ({ category, id }) => {
         navigate(`/products/${categoryObj.urlParamKey}${categoryObj.name}`);
       }
      }
-// =================================================================
-// ======================== alter Code ================================
+
   return (
-    // <Link
-    //   to={
-    //     category === "Zufall"
-    //       ? `/products/${categoryObj.urlParamKey}`
-    //       : `/products/${categoryObj.urlParamKey}${categoryObj.name}`
-    //   }
-    // >
-    //   <article className="category-item">
-    //     <div className="category-item-overlay"> </div>
-    //     <img className="category-item-img" src={categoryObj.image} alt="" />
-    //     <span className="category-item-accent-number">{id}</span>
-    //     <h2 className="category-item-headline">{category}</h2>
-    //     <p className="category-item-content">Ipsum dolor sit amet</p>
-    //   </article>
-    // </Link>
-      // ================== Metin BackButton ============================
+
 
     <div onClick={testFunktion}>
       <article className="category-item">
@@ -95,7 +73,7 @@ const CategoryItem = ({ category, id }) => {
       </article>
     </div>
 
-    // =================================================================
+
   );
 };
 
